@@ -4,7 +4,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import Antd from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
 import Vue from 'vue';
 
 require('./bootstrap');
@@ -23,10 +22,10 @@ Vue.use(Antd);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-const files = require.context('./modules/', true, /\.vue$/i)
+const files = require.context('../../modules/', true, /\.vue$/i)
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('main-layout', require('./layout/Mainlayout.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

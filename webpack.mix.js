@@ -13,4 +13,16 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+    .postCss('resources/css/app.css', 'public/css');
+    // .less('node_modules/ant-design-vue/dist/antd.less', 'public/css', {
+    //     lessOptions: {
+    //         // If you are using less-loader@5 please spread the lessOptions to options directly
+    //         strictMath: false,
+    //         modifyVars: {
+    //             'primary-color': '#1DA57A',
+    //             'link-color': '#1DA57A',
+    //             'border-radius-base': '2px',
+    //         },
+    //         javascriptEnabled: true,
+    //     },
+    // })
