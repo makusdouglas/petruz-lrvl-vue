@@ -3,10 +3,17 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+import Vue from 'vue';
 
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+
+Vue.config.productionTip = false;
+
+Vue.use(Antd);
 
 /**
  * The following block of code may be used to automatically register your
@@ -16,8 +23,8 @@ window.Vue = require('vue').default;
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+const files = require.context('./modules/', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
@@ -28,5 +35,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#root',
 });
