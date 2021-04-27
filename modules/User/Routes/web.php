@@ -14,3 +14,4 @@
 Route::prefix('user')->group(function() {
     Route::get('/', 'UserController@index');
 });
+Route::get('login', 'UserController@login');

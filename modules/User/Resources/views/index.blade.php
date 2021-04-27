@@ -1,9 +1,8 @@
-@extends('user::layouts.master')
+@extends('application::layouts.master')
 
 @section('content')
-    <h1>Hello World</h1>
-
-    <p>
-        This view is loaded from module: {!! config('user.name') !!}
-    </p>
+<h1>User Profile</h1>
+    <div id="root">
+        {{-- Show User Profile --}}
+    </div>
 @endsection

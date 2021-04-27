@@ -16,6 +16,13 @@ class UserController extends Controller
     {
         return view('user::index');
     }
+    /**
+     * Display the auth form to login
+     */
+    public function login()
+    {
+        return view('user::login');
+    }
 
     /**
      * Show the form for creating a new resource.
